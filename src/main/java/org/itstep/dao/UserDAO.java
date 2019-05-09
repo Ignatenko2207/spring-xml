@@ -7,13 +7,18 @@ import lombok.Setter;
 import org.hibernate.Session;
 import org.itstep.dao.connection.ConnectionFactory;
 import org.itstep.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Setter
 @Getter
 @Component
+@Qualifier("userDAO")
 public class UserDAO{
-	
+
+    @Autowired
+    @Qualifier("h2Factory")
 	private ConnectionFactory connectionFactory;
 	
 	public void saveOrUpdate(User user){

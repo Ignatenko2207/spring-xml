@@ -8,9 +8,13 @@ import org.itstep.entity.Cart;
 import org.itstep.entity.Item;
 import org.itstep.entity.Order;
 import org.itstep.entity.User;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.Properties;
 
+@Component
+@Qualifier("postgreFactory")
 public class PostgresFactory implements ConnectionFactory {
 
     public SessionFactory getSessionFactory() {
