@@ -11,10 +11,12 @@ import org.itstep.entity.Item;
 import org.itstep.entity.Order;
 import org.itstep.entity.User;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("h2Factory")
+@Primary
 public class H2Factory implements ConnectionFactory {
 
     public SessionFactory getSessionFactory() {

@@ -10,15 +10,17 @@ import org.itstep.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 @Setter
 @Getter
-@Component
+//@Component
+@Repository
 @Qualifier("userDAO")
 public class UserDAO{
 
     @Autowired
-    @Qualifier("h2Factory")
+//    @Qualifier("h2Factory")
 	private ConnectionFactory connectionFactory;
 	
 	public void saveOrUpdate(User user){
